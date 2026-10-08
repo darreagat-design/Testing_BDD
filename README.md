@@ -39,6 +39,9 @@ Los escenarios se automatizan con:
 ## Estructura del proyecto
 ```text
 Testing_BDD/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 ├── app/
 │   ├── login.html
 │   ├── login.js
@@ -78,3 +81,6 @@ pytest
 
 ## Revisión tras el sprint
 Después de implementar y ejecutar los escenarios, se revisó que las reglas de negocio coincidieran con los escenarios Gherkin. Los seis casos principales del flujo de inicio de sesión quedaron cubiertos correctamente.
+
+## Sprint 4: Integración continua con GitHub Actions
+GitHub Actions ejecuta automáticamente las pruebas BDD mediante el workflow `.github/workflows/tests.yml` cada vez que se realiza un `push` o se abre/actualiza un `pull request`. El workflow prepara Python 3.12 y Chrome, instala las dependencias desde `requirements.txt` y corre `pytest`. El resultado esperado es que pasen los 6 escenarios.
